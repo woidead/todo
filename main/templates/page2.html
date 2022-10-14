@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%block title%} page {% endblock %}
+
+{% block content %}
+<div class="container">
+    <form  method="POST">
+        {% csrf_token %}
+    <div class="mb-3 mt-5">
+        <label for="exampleFormControlInput1" class="form-label" >Название</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder = "Имя" >
+    </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="{%url 'main'%}"><button type="" class="btn btn-danger">Назад</button></a>
+
+    </form>
+</div>
+
+
+{% endblock %}
